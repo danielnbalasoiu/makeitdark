@@ -23,7 +23,7 @@ injectable = BEGIN_MARKER + " \n\
     let webviews = document.querySelectorAll(\".TeamView webview\");  \n\
    \n\
     /* Fetch CSS in parallel ahead of time from cdn host */  \n\
-    const cssPath = 'https://raw.githubusercontent.com/jszklarz-haventec/makeitdark/master/darkreader.css';  \n\
+    const cssPath = 'https://raw.githubusercontent.com/danielnbalasoiu/makeitdark/master/darkreader.css';  \n\
     let cssPromise = fetch(cssPath).then(response => response.text());  \n\
    \n\
     /* Insert a style tag into the wrapper view */  \n\
@@ -58,7 +58,9 @@ slack_theme_path = ""
 if platform == "linux" or platform == "linux2":
     # linux
     print("Detected linux OS")
-    slack_theme_path = "/usr/lib/slack/resources/app.asar.unpacked/src/static/ssb-interop.js"
+#    slack_theme_path = "/usr/lib/slack/resources/app.asar.unpacked/src/static/ssb-interop.js"
+# Flatpak
+    slack_theme_path = "/var/lib/flatpak/app/com.slack.Slack/x86_64/stable/804b4ac18190c41df1f4faebd37e5f35ac472a76e713e7674a198ee0d2a043fe/files/extra/lib/slack/resources/app.asar.unpacked/src/static/ssb-interop.js"
 elif platform == "darwin":
     # OS X
     print("Detected OS X")
